@@ -1,7 +1,7 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FINAL_CONTENT, BRAND } from '../data/productContent';
+import { FINAL_CONTENT, BRAND, CREATOR } from '../data/productContent';
 import PrimaryButton from '../components/PrimaryButton';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
@@ -87,13 +87,26 @@ export default function FinalSection() {
         </div>
 
         {/* Supporting Copy */}
-        <div ref={copyRef} className="max-w-xl mb-10">
+        <div ref={copyRef} className="max-w-xl mb-6">
           <p className="font-sans text-lg sm:text-2xl text-[#17191C]/90 font-medium">
             {FINAL_CONTENT.copy}
           </p>
           <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#17191C]/65 mt-3">
             {BRAND.tagline}
           </p>
+        </div>
+
+        {/* Creator Credit Pill */}
+        <div className="mb-10 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#17191C]/10 border border-[#17191C]/20 font-mono text-[11px] tracking-[0.18em] uppercase text-[#17191C]">
+          <span>CONCEPT & ARCHITECTURE BY</span>
+          <a
+            href={CREATOR.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold underline hover:text-black transition-colors"
+          >
+            {CREATOR.name}
+          </a>
         </div>
 
         {/* Action CTAs */}

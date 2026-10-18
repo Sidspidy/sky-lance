@@ -2,8 +2,19 @@ export const BRAND = {
   name: "SKY LANCE",
   tagline: "FUTURE FLIGHT. REDEFINED.",
   supportingStatement: "Precision engineering. Limitless perspective.",
-  disclaimer: "An independent fictional product-design and frontend experiment.",
+  disclaimer: "An independent creative product-design and frontend experiment.",
   footerNotice: "SKY LANCE — CONCEPT PROJECT",
+};
+
+export const CREATOR = {
+  name: "Sidhanathan",
+  email: "sidhart1010@gmail.com",
+  github: "https://github.com/Sidspidy",
+  linkedin: "https://www.linkedin.com/in/sidhanathan-k-sid",
+  liveUrl: "https://skylance.netlify.app/",
+  role: "Creative Frontend Engineer & Digital Art Director",
+  tagline: "Architecting high-performance, cinematic digital experiences with modern web technologies.",
+  status: "Available for Roles & Collaborations",
 };
 
 export const NAV_LINKS = [

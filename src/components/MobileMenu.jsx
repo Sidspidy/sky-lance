@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, ArrowUpRight } from 'lucide-react';
-import { NAV_LINKS, BRAND } from '../data/productContent';
+import { NAV_LINKS, BRAND, CREATOR } from '../data/productContent';
 
 export default function MobileMenu({ isOpen, onClose, onNavClick }) {
   if (!isOpen) return null;
@@ -65,9 +65,13 @@ export default function MobileMenu({ isOpen, onClose, onNavClick }) {
         >
           EXPLORE SKY LANCE
         </button>
-        <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-[#17191C]/60 text-center">
-          {BRAND.disclaimer}
-        </p>
+        <div className="flex items-center justify-center gap-3 font-mono text-[10px] uppercase tracking-wider text-[#17191C]/75 pt-1">
+          <span>BY {CREATOR.name}</span>
+          <span>•</span>
+          <a href={CREATOR.github} target="_blank" rel="noopener noreferrer" className="underline font-bold">GitHub</a>
+          <span>•</span>
+          <a href={CREATOR.linkedin} target="_blank" rel="noopener noreferrer" className="underline font-bold">LinkedIn</a>
+        </div>
       </div>
     </div>
   );

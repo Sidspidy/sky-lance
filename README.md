@@ -80,6 +80,17 @@ frontend projects/
 
 ---
 
+## Creator & Author
+
+**Sidhanathan** — Creative Frontend Engineer & Digital Art Director
+
+- **Live Deployment**: [https://skylance.netlify.app/](https://skylance.netlify.app/)
+- **GitHub**: [@Sidspidy](https://github.com/Sidspidy)
+- **LinkedIn**: [Sidhanathan K](https://www.linkedin.com/in/sidhanathan-k-sid)
+- **Direct Email**: [sidhart1010@gmail.com](mailto:sidhart1010@gmail.com)
+
+---
+
 ## License
 
-Created as an independent creative design study.
+Created by Sidhanathan as an independent creative aerospace design study. All rights reserved.

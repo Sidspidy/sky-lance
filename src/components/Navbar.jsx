@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
-import { BRAND, NAV_LINKS } from '../data/productContent';
+import { GithubIcon } from './SocialIcons';
+import { BRAND, NAV_LINKS, CREATOR } from '../data/productContent';
 import MobileMenu from './MobileMenu';
 
 export default function Navbar() {
@@ -71,6 +72,17 @@ export default function Navbar() {
 
           {/* Right Compact CTA & Mobile Toggle */}
           <div className="flex items-center gap-3">
+            <a
+              href={CREATOR.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit ${CREATOR.name} on GitHub`}
+              title={`${CREATOR.name}'s GitHub`}
+              className="hidden sm:inline-flex w-9 h-9 rounded-full border border-[#17191C]/25 hover:border-[#17191C] hover:bg-[#17191C] hover:text-[#FFF8EE] text-[#17191C] items-center justify-center transition-all duration-200"
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+
             <a
               href="#design"
               onClick={(e) => handleNavClick(e, '#design')}

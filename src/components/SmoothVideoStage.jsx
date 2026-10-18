@@ -75,22 +75,10 @@ export default function SmoothVideoStage({
         scrub: 0.5,
         onUpdate: (self) => {
           const totalDuration = video.duration || exactDuration || maxTime || 10.0;
-          // Smooth non-linear or calibrated progress mapping to ensure all 10 seconds are experienced
           const cappedTime = Math.min(Math.max(self.progress * totalDuration, 0), totalDuration - 0.02);
           targetTime = cappedTime;
         },
       });
-
-      // Gentle subtle breathing bob when stationary
-      if (!prefersReducedMotion) {
-        gsap.to(video, {
-          y: 6,
-          duration: 3,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-        });
-      }
     }, stage);
 
     return () => {
@@ -107,10 +95,10 @@ export default function SmoothVideoStage({
       id={id}
       className={`relative w-full bg-[#FF7900] min-h-[220vh] sm:min-h-[240vh] pb-16 sm:pb-24 ${className}`}
     >
-      {/* Pinned Video Background */}
+      {/* Pinned Video Background with 100% Solid Color Blending and Zero Glitch Overlays */}
       <div
         ref={videoWrapperRef}
-        className="w-full h-screen overflow-hidden z-0 pointer-events-none"
+        className="w-full h-screen overflow-hidden z-0 pointer-events-none bg-[#FF7900]"
         style={{ willChange: 'transform' }}
       >
         <video
@@ -122,8 +110,11 @@ export default function SmoothVideoStage({
           className="w-full h-full object-cover object-center select-none"
         />
 
-        {/* Ambient Subtle Vignette */}
-        <div className="absolute inset-0 aerospace-radial opacity-45 pointer-events-none" />
+        {/* Seamless Perimeter Edge Blenders: dissolves any MP4 color compression step into #FF7900 */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#FF7900] via-[#FF7900]/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#FF7900] via-[#FF7900]/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#FF7900] to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#FF7900] to-transparent pointer-events-none" />
 
         {/* Strategic Watermark Concealer Badge */}
         <WatermarkMaskBadge />
