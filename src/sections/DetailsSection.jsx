@@ -42,10 +42,11 @@ export default function DetailsSection() {
             start: 'top 90%',
             once: true,
           },
-          y: 25,
-          duration: 0.7,
-          stagger: 0.1,
+          y: 20,
+          duration: 0.6,
+          stagger: 0.08,
           ease: 'power2.out',
+          clearProps: 'all',
         });
       }
 
@@ -88,182 +89,245 @@ export default function DetailsSection() {
           </p>
         </div>
 
-        {/* Asymmetrical Aerospace Bento Blueprint Matrix (No Horizontal Scroll) */}
-        <div ref={bentoRef} className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-14">
-          {/* Module 01: Wide Hero (7 Columns) - Surface Materials */}
-          <div className="bento-item lg:col-span-7 rounded-3xl bg-[#17191C] text-[#FFF8EE] p-7 sm:p-10 shadow-2xl border border-[#FFF8EE]/10 flex flex-col justify-between relative overflow-hidden group hover:border-[#FF9A28]/50 transition-all duration-300">
-            <div>
-              <div className="flex items-center justify-between pb-4 border-b border-[#FFF8EE]/10 mb-6">
+        {/* Asymmetrical Aerospace Bento Blueprint Matrix with Static Zoom and Perfect Alignment */}
+        <div ref={bentoRef} className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-14 items-stretch">
+          {/* Module 01: Wide Hero (7 Columns) - Side Profile Background (Swapped) */}
+          <div className="bento-item lg:col-span-7 rounded-3xl bg-[#FF7900] text-[#FFF8EE] p-6 sm:p-8 shadow-2xl border border-white/25 flex flex-col justify-between relative overflow-hidden min-h-[460px] sm:min-h-[500px] h-full">
+            {/* Drone Side Profile Background - Fixed in Zoom Size (No Hover Jitter) */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+              <img
+                src="/assets/images/detail-side-profile.png"
+                alt="SKY LANCE Side Profile Attitude"
+                className="w-full h-full object-cover object-center scale-105 select-none"
+              />
+              {/* Ultra-subtle bottom shadow only for telemetry readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            {/* Content Foreground */}
+            <div className="relative z-10 flex flex-col justify-between h-full">
+              {/* Top Bar Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-white/20 mb-6">
                 <div className="flex items-center gap-2.5">
-                  <ShieldCheck className="w-4 h-4 text-[#FF9A28]" />
-                  <span className="font-mono text-xs font-bold tracking-[0.22em] text-[#FF9A28]">
+                  <ShieldCheck className="w-4 h-4 text-[#FFF8EE]" />
+                  <span className="font-mono text-xs font-bold tracking-[0.22em] text-[#FFF8EE] drop-shadow-sm">
                     01 // COMPOSITE ARCHITECTURE
                   </span>
                 </div>
-                <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-[#C7C9CB] px-3 py-1 rounded-full bg-[#FFF8EE]/5 border border-[#FFF8EE]/10">
+                <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-[#FFF8EE] px-3 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 shadow-sm">
                   AS9100D QUALIFIED
                 </span>
               </div>
 
-              <h3 className="font-display font-extrabold text-2xl sm:text-4xl uppercase tracking-tight text-[#FFF8EE] mb-2">
-                T1000 NANOCARBON WEAVE
-              </h3>
-              <h4 className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase text-[#FF9A28] mb-5 font-semibold">
-                CONTINUOUS PRE-PREG / SMOKED OPTICAL ACRYLIC
-              </h4>
-
-              <p className="font-sans text-sm sm:text-base text-[#C7C9CB] leading-relaxed mb-8 max-w-xl">
-                Hand-laid high-modulus continuous carbon pre-preg fused with anti-glare aerospace clearcoat to resist extreme atmospheric sheer, ultraviolet radiation, and aerodynamic friction.
-              </p>
-            </div>
-
-            {/* Dual High-Contrast Meters */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-[#FFF8EE]/10">
-              <div className="p-4 rounded-2xl bg-[#FFF8EE]/5 border border-[#FFF8EE]/10">
-                <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#C7C9CB] block mb-1">
-                  TENSILE STRENGTH
-                </span>
-                <span className="font-mono font-bold text-xl sm:text-2xl text-[#FF9A28] block mb-2">
-                  4,900 MPA
-                </span>
-                <div className="w-full h-1.5 rounded-full bg-[#FFF8EE]/10 overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-[#FF7900] to-[#FF9A28] rounded-full w-[96%]" />
-                </div>
+              {/* Light Translucent Text Block (No Heavy Black Box) */}
+              <div className="max-w-xl p-4 sm:p-5 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/15 shadow-lg my-auto">
+                <h3 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight text-[#FFF8EE] mb-1.5 drop-shadow-md">
+                  T1000 NANOCARBON WEAVE
+                </h3>
+                <h4 className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase text-[#FFF8EE]/90 mb-3 font-semibold drop-shadow-sm">
+                  CONTINUOUS PRE-PREG / SMOKED CANOPY
+                </h4>
+                <p className="font-sans text-xs sm:text-sm text-[#FFF8EE]/90 leading-relaxed drop-shadow-sm">
+                  Hand-laid high-modulus continuous carbon pre-preg fused with anti-glare aerospace clearcoat to resist extreme atmospheric sheer, ultraviolet radiation, and aerodynamic friction.
+                </p>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#FFF8EE]/5 border border-[#FFF8EE]/10">
-                <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#C7C9CB] block mb-1">
-                  MATERIAL DENSITY
-                </span>
-                <span className="font-mono font-bold text-xl sm:text-2xl text-[#FFF8EE] block mb-2">
-                  1.55 G/CM³
-                </span>
-                <div className="w-full h-1.5 rounded-full bg-[#FFF8EE]/10 overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-[#FFF8EE]/60 to-[#FFF8EE] rounded-full w-[85%]" />
+              {/* Dual High-Contrast Light Glass Meters */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-white/20 mt-6">
+                <div className="p-3.5 sm:p-4 rounded-2xl bg-black/30 backdrop-blur-md border border-white/20 shadow-lg">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#FFF8EE]/80 block mb-1">
+                    TENSILE STRENGTH
+                  </span>
+                  <span className="font-mono font-bold text-xl sm:text-2xl text-[#FF9A28] block mb-2 drop-shadow-sm">
+                    4,900 MPA
+                  </span>
+                  <div className="w-full h-1.5 rounded-full bg-white/20 overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-[#FF7900] to-[#FF9A28] rounded-full w-[96%]" />
+                  </div>
+                </div>
+
+                <div className="p-3.5 sm:p-4 rounded-2xl bg-black/30 backdrop-blur-md border border-white/20 shadow-lg">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#FFF8EE]/80 block mb-1">
+                    MATERIAL DENSITY
+                  </span>
+                  <span className="font-mono font-bold text-xl sm:text-2xl text-[#FFF8EE] block mb-2 drop-shadow-sm">
+                    1.55 G/CM³
+                  </span>
+                  <div className="w-full h-1.5 rounded-full bg-white/20 overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-[#FFF8EE]/60 to-[#FFF8EE] rounded-full w-[85%]" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Module 02: Tall Stack (5 Columns) - Propulsion Rings */}
-          <div className="bento-item lg:col-span-5 rounded-3xl bg-[#17191C] text-[#FFF8EE] p-7 sm:p-10 shadow-2xl border border-[#FFF8EE]/10 flex flex-col justify-between relative overflow-hidden group hover:border-[#FF9A28]/50 transition-all duration-300">
-            <div>
-              <div className="flex items-center justify-between pb-4 border-b border-[#FFF8EE]/10 mb-6">
+          {/* Module 02: Tall Stack (5 Columns) - Rotor Macro Background */}
+          <div className="bento-item lg:col-span-5 rounded-3xl bg-[#FF7900] text-[#FFF8EE] p-6 sm:p-8 shadow-2xl border border-white/25 flex flex-col justify-between relative overflow-hidden min-h-[460px] sm:min-h-[500px] h-full">
+            {/* Rotor Macro Background - Fixed in Zoom Size */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+              <img
+                src="/assets/images/detail-rotor-macro.png"
+                alt="SKY LANCE Ducted Rotor Shroud Macro"
+                className="w-full h-full object-cover object-center scale-105 select-none"
+              />
+              {/* Ultra-subtle bottom shadow */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            {/* Content Foreground */}
+            <div className="relative z-10 flex flex-col justify-between h-full">
+              {/* Top Bar Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-white/20 mb-6">
                 <div className="flex items-center gap-2.5">
-                  <Activity className="w-4 h-4 text-[#FF9A28]" />
-                  <span className="font-mono text-xs font-bold tracking-[0.22em] text-[#FF9A28]">
+                  <Activity className="w-4 h-4 text-[#FFF8EE]" />
+                  <span className="font-mono text-xs font-bold tracking-[0.22em] text-[#FFF8EE] drop-shadow-sm">
                     02 // ACOUSTIC SHROUDS
                   </span>
                 </div>
-                <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-[#C7C9CB] px-3 py-1 rounded-full bg-[#FFF8EE]/5 border border-[#FFF8EE]/10">
+                <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-[#FFF8EE] px-3 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 shadow-sm">
                   FAR PART 27
                 </span>
               </div>
 
-              <h3 className="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-[#FFF8EE] mb-2">
-                DUCTED VECTOR COWLS
-              </h3>
-              <h4 className="font-mono text-xs tracking-[0.18em] uppercase text-[#FF9A28] mb-4 font-semibold">
-                TORQUE-BALANCED QUAD NACELLES
-              </h4>
-
-              <p className="font-sans text-sm text-[#C7C9CB] leading-relaxed mb-6">
-                Precision ducted perimeter cowlings engineered to eliminate rotor tip vortices, suppress high-frequency acoustics, and safely protect surrounding personnel.
-              </p>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-[#FFF8EE]/5 border border-[#FFF8EE]/10 mt-auto">
-              <div className="flex justify-between items-center mb-2 font-mono">
-                <span className="text-[10px] uppercase tracking-[0.18em] text-[#C7C9CB]">ACOUSTIC DAMPING</span>
-                <span className="text-sm font-bold text-[#FF9A28]">-18 DBA REDUCTION</span>
+              {/* Light Translucent Text Block (No Heavy Black Box) */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/15 shadow-lg my-auto">
+                <h3 className="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-[#FFF8EE] mb-1.5 drop-shadow-md">
+                  DUCTED VECTOR COWLS
+                </h3>
+                <h4 className="font-mono text-xs tracking-[0.18em] uppercase text-[#FFF8EE]/90 mb-3 font-semibold drop-shadow-sm">
+                  TORQUE-BALANCED QUAD NACELLES
+                </h4>
+                <p className="font-sans text-xs sm:text-sm text-[#FFF8EE]/90 leading-relaxed drop-shadow-sm">
+                  Precision ducted perimeter cowlings engineered to eliminate rotor tip vortices, suppress high-frequency acoustics, and safely protect surrounding personnel.
+                </p>
               </div>
-              <div className="flex justify-between items-center font-mono">
-                <span className="text-[10px] uppercase tracking-[0.18em] text-[#C7C9CB]">MAX VELOCITY</span>
-                <span className="text-sm font-bold text-[#FFF8EE]">8,500 RPM</span>
+
+              {/* Light Glass Metrics Box */}
+              <div className="p-3.5 sm:p-4 rounded-2xl bg-black/30 backdrop-blur-md border border-white/20 shadow-lg mt-6">
+                <div className="flex justify-between items-center mb-2 font-mono">
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-[#FFF8EE]/80">ACOUSTIC DAMPING</span>
+                  <span className="text-sm font-bold text-[#FF9A28] drop-shadow-sm">-18 DBA REDUCTION</span>
+                </div>
+                <div className="flex justify-between items-center font-mono">
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-[#FFF8EE]/80">MAX VELOCITY</span>
+                  <span className="text-sm font-bold text-[#FFF8EE] drop-shadow-sm">8,500 RPM</span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Module 03: Balanced Stack (5 Columns) - Shell Geometry */}
-          <div className="bento-item lg:col-span-5 rounded-3xl bg-[#17191C] text-[#FFF8EE] p-7 sm:p-10 shadow-2xl border border-[#FFF8EE]/10 flex flex-col justify-between relative overflow-hidden group hover:border-[#FF9A28]/50 transition-all duration-300">
-            <div>
-              <div className="flex items-center justify-between pb-4 border-b border-[#FFF8EE]/10 mb-6">
+          {/* Module 03: Tall Stack (5 Columns) - Top-Down Architecture Background (Swapped) */}
+          <div className="bento-item lg:col-span-5 rounded-3xl bg-[#FF7900] text-[#FFF8EE] p-6 sm:p-8 shadow-2xl border border-white/25 flex flex-col justify-between relative overflow-hidden min-h-[460px] sm:min-h-[500px] h-full">
+            {/* Top-Down Architecture Background - Fixed in Zoom Size */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+              <img
+                src="/assets/images/detail-top-architecture.png"
+                alt="SKY LANCE Top-Down Architecture"
+                className="w-full h-full object-cover object-center scale-105 select-none"
+              />
+              {/* Ultra-subtle bottom shadow */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            {/* Content Foreground */}
+            <div className="relative z-10 flex flex-col justify-between h-full">
+              {/* Top Bar Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-white/20 mb-6">
                 <div className="flex items-center gap-2.5">
-                  <Compass className="w-4 h-4 text-[#FF9A28]" />
-                  <span className="font-mono text-xs font-bold tracking-[0.22em] text-[#FF9A28]">
+                  <Compass className="w-4 h-4 text-[#FFF8EE]" />
+                  <span className="font-mono text-xs font-bold tracking-[0.22em] text-[#FFF8EE] drop-shadow-sm">
                     03 // LAMINAR DYNAMICS
                   </span>
                 </div>
-                <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-[#C7C9CB] px-3 py-1 rounded-full bg-[#FFF8EE]/5 border border-[#FFF8EE]/10">
+                <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-[#FFF8EE] px-3 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 shadow-sm">
                   WIND TUNNEL
                 </span>
               </div>
 
-              <h3 className="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-[#FFF8EE] mb-2">
-                SCULPTED ATTITUDE
-              </h3>
-              <h4 className="font-mono text-xs tracking-[0.18em] uppercase text-[#FF9A28] mb-4 font-semibold">
-                DIHEDRAL AERO STABILIZERS
-              </h4>
-
-              <p className="font-sans text-sm text-[#C7C9CB] leading-relaxed mb-6">
-                Continuous aerodynamic monocoque channeling natural airflow downward across aft stabilizers for passive high-speed equilibrium.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 pt-4 border-t border-[#FFF8EE]/10 font-mono">
-              <div className="p-3 rounded-xl bg-[#FFF8EE]/5 border border-[#FFF8EE]/10">
-                <span className="text-[9px] uppercase tracking-[0.18em] text-[#C7C9CB] block mb-1">DRAG RATING</span>
-                <span className="font-bold text-lg text-[#FF9A28]">0.18 CD</span>
+              {/* Light Translucent Text Block (No Heavy Black Box) */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/15 shadow-lg my-auto">
+                <h3 className="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-tight text-[#FFF8EE] mb-1.5 drop-shadow-md">
+                  SCULPTED ATTITUDE
+                </h3>
+                <h4 className="font-mono text-xs tracking-[0.18em] uppercase text-[#FFF8EE]/90 mb-3 font-semibold drop-shadow-sm">
+                  DIHEDRAL AERO STABILIZERS
+                </h4>
+                <p className="font-sans text-xs sm:text-sm text-[#FFF8EE]/90 leading-relaxed drop-shadow-sm">
+                  Continuous aerodynamic monocoque channeling natural airflow downward across aft stabilizers for passive high-speed equilibrium.
+                </p>
               </div>
-              <div className="p-3 rounded-xl bg-[#FFF8EE]/5 border border-[#FFF8EE]/10">
-                <span className="text-[9px] uppercase tracking-[0.18em] text-[#C7C9CB] block mb-1">LAMINAR COHESION</span>
-                <span className="font-bold text-lg text-[#FFF8EE]">94%</span>
+
+              {/* Light Glass Metrics Box */}
+              <div className="grid grid-cols-2 gap-3 pt-4 border-t border-white/20 font-mono mt-6">
+                <div className="p-3.5 rounded-xl bg-black/30 backdrop-blur-md border border-white/20 shadow-lg">
+                  <span className="text-[9px] uppercase tracking-[0.18em] text-[#FFF8EE]/80 block mb-1">DRAG RATING</span>
+                  <span className="font-bold text-lg text-[#FF9A28] drop-shadow-sm">0.18 CD</span>
+                </div>
+                <div className="p-3.5 rounded-xl bg-black/30 backdrop-blur-md border border-white/20 shadow-lg">
+                  <span className="text-[9px] uppercase tracking-[0.18em] text-[#FFF8EE]/80 block mb-1">LAMINAR COHESION</span>
+                  <span className="font-bold text-lg text-[#FFF8EE] drop-shadow-sm">94%</span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Module 04: Wide Stack (7 Columns) - Integrated Lighting */}
-          <div className="bento-item lg:col-span-7 rounded-3xl bg-[#17191C] text-[#FFF8EE] p-7 sm:p-10 shadow-2xl border border-[#FFF8EE]/10 flex flex-col justify-between relative overflow-hidden group hover:border-[#FF9A28]/50 transition-all duration-300">
-            <div>
-              <div className="flex items-center justify-between pb-4 border-b border-[#FFF8EE]/10 mb-6">
+          {/* Module 04: Wide Hero (7 Columns) - Front Elevation Background (Fixed Vertical Alignment) */}
+          <div className="bento-item lg:col-span-7 rounded-3xl bg-[#FF7900] text-[#FFF8EE] p-6 sm:p-8 shadow-2xl border border-white/25 flex flex-col justify-between relative overflow-hidden min-h-[460px] sm:min-h-[500px] h-full">
+            {/* Front Elevation Background - Fixed in Zoom Size and Raised Up Centered */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+              <img
+                src="/assets/images/detail-front-elevation.png"
+                alt="SKY LANCE Front Elevation Stance"
+                className="w-full h-full object-cover object-[center_35%] scale-105 select-none"
+              />
+              {/* Ultra-subtle bottom shadow */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            </div>
+
+            {/* Content Foreground */}
+            <div className="relative z-10 flex flex-col justify-between h-full">
+              {/* Top Bar Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-white/20 mb-6">
                 <div className="flex items-center gap-2.5">
-                  <Cpu className="w-4 h-4 text-[#FF9A28]" />
-                  <span className="font-mono text-xs font-bold tracking-[0.22em] text-[#FF9A28]">
+                  <Cpu className="w-4 h-4 text-[#FFF8EE]" />
+                  <span className="font-mono text-xs font-bold tracking-[0.22em] text-[#FFF8EE] drop-shadow-sm">
                     04 // OPTICAL TELEMETRY
                   </span>
                 </div>
-                <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-[#C7C9CB] px-3 py-1 rounded-full bg-[#FFF8EE]/5 border border-[#FFF8EE]/10">
+                <span className="font-mono text-[9px] tracking-[0.16em] uppercase text-[#FFF8EE] px-3 py-1 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 shadow-sm">
                   ICAO ANNEX 14
                 </span>
               </div>
 
-              <h3 className="font-display font-extrabold text-2xl sm:text-4xl uppercase tracking-tight text-[#FFF8EE] mb-2">
-                360° AMBER OPTICAL BANDS
-              </h3>
-              <h4 className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase text-[#FF9A28] mb-5 font-semibold">
-                FULL-PERIMETER GUIDANCE LIGHT-PIPES
-              </h4>
-
-              <p className="font-sans text-sm sm:text-base text-[#C7C9CB] leading-relaxed mb-6 max-w-xl">
-                Recessed continuous amber navigation light-pipes calibrated to ensure instantaneous multi-axis attitude recognition through dense atmospheric conditions and night maneuvers.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-6 border-t border-[#FFF8EE]/10 font-mono">
-              <div className="flex items-center gap-6">
-                <div>
-                  <span className="text-[9px] uppercase tracking-[0.18em] text-[#C7C9CB] block mb-1">WAVELENGTH</span>
-                  <span className="font-bold text-lg text-[#FF9A28]">592 NM AMBER</span>
-                </div>
-                <div>
-                  <span className="text-[9px] uppercase tracking-[0.18em] text-[#C7C9CB] block mb-1">TOTAL FLUX</span>
-                  <span className="font-bold text-lg text-[#FFF8EE]">3,200 LUMENS</span>
-                </div>
+              {/* Light Translucent Text Block (No Heavy Black Box) */}
+              <div className="max-w-xl p-4 sm:p-5 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/15 shadow-lg my-auto">
+                <h3 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight text-[#FFF8EE] mb-1.5 drop-shadow-md">
+                  360° AMBER OPTICAL BANDS
+                </h3>
+                <h4 className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase text-[#FFF8EE]/90 mb-3 font-semibold drop-shadow-sm">
+                  FULL-PERIMETER GUIDANCE LIGHT-PIPES
+                </h4>
+                <p className="font-sans text-xs sm:text-sm text-[#FFF8EE]/90 leading-relaxed drop-shadow-sm">
+                  Recessed continuous amber navigation light-pipes calibrated to ensure instantaneous multi-axis attitude recognition through dense atmospheric conditions and night maneuvers.
+                </p>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#FF7900]/15 border border-[#FF7900]/30 text-[10px] tracking-[0.18em] text-[#FF9A28] uppercase font-bold self-start sm:self-center">
-                <span>ACTIVE NAVIGATION TRACK</span>
+              {/* Bottom Telemetry Metrics */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-6 border-t border-white/20 font-mono mt-6">
+                <div className="flex items-center gap-6">
+                  <div>
+                    <span className="text-[9px] uppercase tracking-[0.18em] text-[#FFF8EE]/80 block mb-1">WAVELENGTH</span>
+                    <span className="font-bold text-lg text-[#FF9A28] drop-shadow-sm">592 NM AMBER</span>
+                  </div>
+                  <div>
+                    <span className="text-[9px] uppercase tracking-[0.18em] text-[#FFF8EE]/80 block mb-1">TOTAL FLUX</span>
+                    <span className="font-bold text-lg text-[#FFF8EE] drop-shadow-sm">3,200 LUMENS</span>
+                  </div>
+                </div>
+
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-[10px] tracking-[0.18em] text-[#FFF8EE] uppercase font-bold self-start sm:self-center shadow-sm">
+                  <span>ACTIVE NAVIGATION TRACK</span>
+                </div>
               </div>
             </div>
           </div>

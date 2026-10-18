@@ -26,7 +26,7 @@ export const NAV_LINKS = [
 ];
 
 export const HERO_CONTENT = {
-  badge: "AEROSPACE DESIGN STUDY // 2026",
+  badge: "AEROSPACE DESIGN STUDY",
   headlineLine1: "THE FUTURE",
   headlineLine2: "TAKES FLIGHT.",
   copy: "Meet SKY LANCE — a futuristic personal flight concept shaped by precision engineering and ambitious design.",
@@ -132,24 +132,28 @@ export const DETAILS_CONTENT = {
       title: "SURFACE MATERIALS",
       subtitle: "GRAPHITE COMPOSITE & TINTED ACRYLIC",
       description: "Hand-laid high-modulus carbon fabric paired with ultra-smooth anti-glare finish resisting atmospheric friction.",
+      image: "/assets/images/detail-side-profile.png",
     },
     {
       number: "02",
       title: "PROPULSION RINGS",
       subtitle: "HIGH-EFFICIENCY AERODYNAMIC SHROUDS",
       description: "Calculated intake geometry engineered to eliminate blade tip vortices and safely protect surrounding personnel.",
+      image: "/assets/images/detail-rotor-macro.png",
     },
     {
       number: "03",
       title: "SHELL GEOMETRY",
       subtitle: "SCULPTED MULTI-AXIS BALANCE",
       description: "Sleek aerodynamic taper channeling natural airflow downward across aft stabilizers for passive high-speed stability.",
+      image: "/assets/images/detail-top-architecture.png",
     },
     {
       number: "04",
       title: "INTEGRATED LIGHTING",
       subtitle: "360-DEGREE AMBER OPTICAL BANDS",
       description: "Recessed luminous navigation tracks calibrated to provide instant orientation telemetry in all lighting conditions.",
+      image: "/assets/images/detail-front-elevation.png",
     },
   ],
 };

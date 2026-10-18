@@ -14,7 +14,7 @@ export default function WatermarkMaskBadge({ className = '' }) {
         </span>
         <div className="flex flex-col">
           <span className="font-mono text-[10px] sm:text-xs tracking-[0.22em] uppercase font-bold text-[#FFF8EE]">
-            SKY LANCE // AERO 2026
+            SKY LANCE // AERO
           </span>
           <span className="font-mono text-[8px] sm:text-[9px] tracking-[0.18em] uppercase text-[#C7C9CB]">
             MONOCOQUE DESIGN STUDY
