@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#FF7900" />
+  <!-- Central aerodynamic fuselage -->
+  <path d="M32 10 L37 28 L32 34 L27 28 Z" fill="#17191C" />
+  <circle cx="32" cy="27" r="3.5" fill="#FF9A28" />
+  <!-- 4 enclosed propulsion nacelles -->
+  <circle cx="19" cy="22" r="8" stroke="#17191C" stroke-width="3" fill="none" />
+  <circle cx="45" cy="22" r="8" stroke="#17191C" stroke-width="3" fill="none" />
+  <circle cx="19" cy="42" r="8" stroke="#17191C" stroke-width="3" fill="none" />
+  <circle cx="45" cy="42" r="8" stroke="#17191C" stroke-width="3" fill="none" />
+  <!-- Connecting aerodynamic spars -->
+  <line x1="25" y1="24" x2="30" y2="28" stroke="#17191C" stroke-width="2.5" stroke-linecap="round" />
+  <line x1="39" y1="24" x2="34" y2="28" stroke="#17191C" stroke-width="2.5" stroke-linecap="round" />
+  <line x1="25" y1="40" x2="30" y2="34" stroke="#17191C" stroke-width="2.5" stroke-linecap="round" />
+  <line x1="39" y1="40" x2="34" y2="34" stroke="#17191C" stroke-width="2.5" stroke-linecap="round" />
+  <!-- Rear stabilizers -->
+  <path d="M28 46 L32 54 L36 46 Z" fill="#17191C" />
+</svg>

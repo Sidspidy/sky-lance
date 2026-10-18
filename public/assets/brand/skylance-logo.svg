@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 44" fill="none">
+  <!-- Precision Aerospace Emblem -->
+  <g transform="translate(6, 4)">
+    <!-- Outer Flight Ring Reticle -->
+    <circle cx="18" cy="18" r="16" stroke="#17191C" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.4" />
+    
+    <!-- 4 Ducted Propulsion Nacelles -->
+    <circle cx="9" cy="9" r="4.5" stroke="#17191C" stroke-width="2.2" fill="#FF7900" />
+    <circle cx="27" cy="9" r="4.5" stroke="#17191C" stroke-width="2.2" fill="#FF7900" />
+    <circle cx="9" cy="27" r="4.5" stroke="#17191C" stroke-width="2.2" fill="#FF7900" />
+    <circle cx="27" cy="27" r="4.5" stroke="#17191C" stroke-width="2.2" fill="#FF7900" />
+    
+    <!-- Structural Cross Struts -->
+    <line x1="12" y1="12" x2="24" y2="24" stroke="#17191C" stroke-width="2" stroke-linecap="round" />
+    <line x1="24" y1="12" x2="12" y2="24" stroke="#17191C" stroke-width="2" stroke-linecap="round" />
+    
+    <!-- Aerodynamic Forward Delta Lance -->
+    <path d="M18 2 L23 18 L18 22 L13 18 Z" fill="#17191C" />
+    
+    <!-- Optical Sensor Core -->
+    <circle cx="18" cy="15" r="2.2" fill="#FFF8EE" />
+  </g>
+  
+  <!-- Divider Line -->
+  <line x1="52" y1="10" x2="52" y2="34" stroke="#17191C" stroke-width="1.5" opacity="0.3" />
+  
+  <!-- Brand Wordmark -->
+  <text x="64" y="24" font-family="'Space Grotesk', system-ui, -apple-system, sans-serif" font-weight="800" font-size="17" letter-spacing="0.26em" fill="#17191C">SKY LANCE</text>
+  <text x="64.5" y="34" font-family="'JetBrains Mono', monospace, monospace" font-weight="600" font-size="7.5" letter-spacing="0.3em" fill="#17191C" opacity="0.75">AEROSPACE STUDY // 01</text>
+</svg>
